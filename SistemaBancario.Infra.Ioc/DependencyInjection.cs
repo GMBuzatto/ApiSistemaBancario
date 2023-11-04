@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using SistemaBancario.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
 
 namespace SistemaBancario.Infra.Ioc
 {
@@ -24,6 +26,32 @@ namespace SistemaBancario.Infra.Ioc
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
+            });
+
+            //Adicionando a injeção de dependencia da autorização do JWT
+
+            builder.Services.AddAuthentication(option =>
+            {
+                option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }
+            ).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                {
+                    ValidateIssuer = true, // validar quem que gera o token
+                    ValidateAudience = true, // valida o destinatario
+                    ValidateLifetime = true, // tempo que sera valido o token
+                    ValidateIssuerSigningKey = true, // valida o login
+
+                    //informações sensiveis pra isolar depois no appSettings
+                    ValidIssuer = builder.Configuration["jwt:issuer"],
+                    ValidAudience = builder.Configuration["jwt:audience"],
+                    //chave secreta utilizando o conversor com Encoding UTF8
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(builder.Configuration["jwt:secretkey"])),
+                    ClockSkew = TimeSpan.Zero
+                };
             });
         }
 
