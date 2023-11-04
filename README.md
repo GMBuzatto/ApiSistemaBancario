@@ -1,2 +1,2 @@
 # ApiSistemaBancario
-Estudar Api's com clean architecture, C#, SQL 
+Estudar Api's com clean archtecture, C#, SQL 
