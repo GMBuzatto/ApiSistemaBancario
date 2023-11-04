@@ -25,8 +25,4 @@
     <ProjectReference Include="..\SistemaBancario.Infra.Ioc\SistemaBancario.Infra.Ioc.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
