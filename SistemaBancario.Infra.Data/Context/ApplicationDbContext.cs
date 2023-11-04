@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SistemaBancario.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace SistemaBancario.Infra.Data.Context
 
 
         //Aqui vai ficar nossos DbSet's, seria as tabelas, nossas entidades
-        //...
+        public DbSet<Usuario> Usuario { get; set; }
 
         //sobreescrevendo o método OnModelCreating passando ModelBuilder
         protected override void OnModelCreating(ModelBuilder modelBuilder)
