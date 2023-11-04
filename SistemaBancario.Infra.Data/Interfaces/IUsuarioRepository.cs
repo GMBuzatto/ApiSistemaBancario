@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaBancario.Infra.Data.Interfaces
 {
-    internal interface IUsuarioRepository
+    public interface IUsuarioRepository
     {
         Task<Usuario> Incluir(Usuario usuario);
         Task<Usuario> Alterar(Usuario usuario);
