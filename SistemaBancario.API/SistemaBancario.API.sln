@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaBancario.Application
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaBancario.Domain", "..\SistemaBancario.Domain\SistemaBancario.Domain.csproj", "{B64EDB59-3DD0-4A41-883C-D8CCCE14D36C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaBancario.Infra.Data", "..\SistemaBancario.Infra.Data\SistemaBancario.Infra.Data.csproj", "{A650FB98-DE45-41A6-8558-9C613875B9C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B64EDB59-3DD0-4A41-883C-D8CCCE14D36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B64EDB59-3DD0-4A41-883C-D8CCCE14D36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B64EDB59-3DD0-4A41-883C-D8CCCE14D36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A650FB98-DE45-41A6-8558-9C613875B9C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A650FB98-DE45-41A6-8558-9C613875B9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A650FB98-DE45-41A6-8558-9C613875B9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A650FB98-DE45-41A6-8558-9C613875B9C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
