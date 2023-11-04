@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SistemaBancario.Domain\SistemaBancario.Domain.csproj" />
+    <ProjectReference Include="..\SistemaBancario.Infra.Data\SistemaBancario.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
