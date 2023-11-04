@@ -9,7 +9,7 @@ namespace SistemaBancario.Infra.Data.Interfaces
 {
     internal interface IUsuarioRepository
     {
-        Task<Usuario> Inclui(Usuario usuario);
+        Task<Usuario> Incluir(Usuario usuario);
         Task<Usuario> Alterar(Usuario usuario);
         Task<Usuario> Excluir(int id);
         Task<Usuario> SelecionarAsync(int id);
