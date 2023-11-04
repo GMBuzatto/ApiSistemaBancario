@@ -11,6 +11,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
+using SistemaBancario.Application.Mappings;
+using SistemaBancario.Application.Interfaces;
+using SistemaBancario.Infra.Data.Interfaces;
 
 namespace SistemaBancario.Infra.Ioc
 {
@@ -53,6 +56,17 @@ namespace SistemaBancario.Infra.Ioc
                     ClockSkew = TimeSpan.Zero
                 };
             });
+
+            //injeção de dependencia do AutoMapper
+            builder.Services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
+
+            //injeção de dependencia do Usuario
+            //Services
+            builder.Services.AddScoped<IUsuarioService, IUsuarioService>();
+            //Repository
+            builder.Services.AddScoped<IUsuarioRepository, IUsuarioRepository>();
+
+
         }
 
     }
