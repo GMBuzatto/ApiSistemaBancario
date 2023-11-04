@@ -49,7 +49,13 @@ namespace SistemaBancario.Domain.Entities
         {
             ValidateDomain(nome,cpf,email,numeroCelular,estado,cidade,bairro,endereco,numero);
         }
-      
+
+        public void AlterarSenha(byte[] paswordHash, byte[] passwordSalt)
+        {
+            PasswordHash = paswordHash;
+            PasswordSalt = passwordSalt;
+        }
+
         //validação do construtor
         public void ValidateDomain(string nome, string cpf, string email,  string numeroCelular, string estado, string cidade, string bairro, string endereco, string numero)
         {
