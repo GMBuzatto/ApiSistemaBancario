@@ -33,6 +33,10 @@ namespace SistemaBancario.Application.DTOs
         [MaxLength(100, ErrorMessage = "O Estado deve ter no máx 100 caracteres")]
         public string Estado { get; set; }
 
+        [Required(ErrorMessage = "A Cidade é obrigatório")]
+        [MaxLength(100, ErrorMessage = "a Cidade deve ter no máx 100 caracteres")]
+        public string Cidade { get; set; }
+
         [Required(ErrorMessage = "O Bairro é obrigatório")]
         [MaxLength(100, ErrorMessage = "O Bairro deve ter no máx 100 caracteres")]
         public string Bairro { get; set; }
