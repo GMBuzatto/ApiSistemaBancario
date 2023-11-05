@@ -14,6 +14,7 @@ using Microsoft.IdentityModel.Tokens;
 using SistemaBancario.Application.Mappings;
 using SistemaBancario.Application.Interfaces;
 using SistemaBancario.Infra.Data.Interfaces;
+using SistemaBancario.Infra.Data.Identity;
 
 namespace SistemaBancario.Infra.Ioc
 {
@@ -61,11 +62,14 @@ namespace SistemaBancario.Infra.Ioc
             builder.Services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             //injeção de dependencia do Usuario
-            //Services
-            builder.Services.AddScoped<IUsuarioService, IUsuarioService>();
             //Repository
             builder.Services.AddScoped<IUsuarioRepository, IUsuarioRepository>();
+            //Services
+            builder.Services.AddScoped<IUsuarioService, IUsuarioService>();
 
+            //IAuthenticate
+            //Servicees
+            builder.Services.AddScoped<IAuthenticate, AuthenticateService>();
 
         }
 
