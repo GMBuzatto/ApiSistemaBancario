@@ -15,6 +15,8 @@ using SistemaBancario.Application.Mappings;
 using SistemaBancario.Application.Interfaces;
 using SistemaBancario.Infra.Data.Interfaces;
 using SistemaBancario.Infra.Data.Identity;
+using SistemaBancario.Infra.Data.Repositories;
+using SistemaBancario.Application.Services;
 
 namespace SistemaBancario.Infra.Ioc
 {
@@ -63,9 +65,9 @@ namespace SistemaBancario.Infra.Ioc
 
             //injeção de dependencia do Usuario
             //Repository
-            builder.Services.AddScoped<IUsuarioRepository, IUsuarioRepository>();
+            builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             //Services
-            builder.Services.AddScoped<IUsuarioService, IUsuarioService>();
+            builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
             //IAuthenticate
             //Servicees
